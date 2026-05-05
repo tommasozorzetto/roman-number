@@ -39,6 +39,15 @@ public class IntegerToRomanTest {
         // Assert
         assertEquals("M", result);
     }
+	
+	@Test
+    public void convert_ShouldReturnDCCCLXXXVIII_WhenInputIs888() {
+        int number = 888;
+        String result = IntegerToRoman.convert(number);
+        
+        // Assert classico
+        assertEquals("DCCCLXXXVIII", result);
+    }
 
     @Test
     public void convert_ShouldThrowException_WhenInputIsZeroOrLess() {
