@@ -25,7 +25,10 @@ public class RomanPrinterTest {
 
         // Assert
         // Aggiungiamo un trim() per ignorare eventuali spazi vuoti finali che non rovinano il disegno
-        assertEquals(expectedAscii.trim(), result.trim());
+        assertEquals(
+            expectedAscii.replaceAll("\\r\\n", "\n").trim(), 
+            result.replaceAll("\\r\\n", "\n").trim()
+        );
     }
 
     @Test
@@ -43,6 +46,9 @@ public class RomanPrinterTest {
         String result = RomanPrinter.print(number);
 
         // Assert
-        assertEquals(expectedAscii.trim(), result.trim());
+        assertEquals(
+            expectedAscii.replaceAll("\\r\\n", "\n").trim(), 
+            result.replaceAll("\\r\\n", "\n").trim()
+        );
     }
 }
