@@ -11,6 +11,7 @@ public class RomanPrinterTest {
 
     @Test
     public void print_ShouldReturnAsciiArtForI_WhenInputIs1() {
+        // Arrange
         int number = 1;
         String expectedAscii = 
             " ___ \n" +
@@ -19,17 +20,17 @@ public class RomanPrinterTest {
             " | | \n" +
             "|___|";
 
+        // Act
         String result = RomanPrinter.print(number);
 
-        // Rimuoviamo tutti gli spazi e a capo per un confronto infallibile sui caratteri
-        assertEquals(
-            expectedAscii.replaceAll("\\s+", ""), 
-            result.replaceAll("\\s+", "")
-        );
+        // Assert
+        // Aggiungiamo un trim() per ignorare eventuali spazi vuoti finali che non rovinano il disegno
+        assertEquals(expectedAscii.trim(), result.trim());
     }
 
     @Test
     public void print_ShouldReturnAsciiArtForV_WhenInputIs5() {
+        // Arrange
         int number = 5;
         String expectedAscii = 
             "__   __\n" +
@@ -38,11 +39,10 @@ public class RomanPrinterTest {
             "  | |  \n" +
             "  |_|  ";
 
+        // Act
         String result = RomanPrinter.print(number);
 
-        assertEquals(
-            expectedAscii.replaceAll("\\s+", ""), 
-            result.replaceAll("\\s+", "")
-        );
+        // Assert
+        assertEquals(expectedAscii.trim(), result.trim());
     }
 }
